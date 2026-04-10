@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liveness Detection</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <header>
+        <h2>Real-Time Face Liveness Verification</h2>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </header>
+
+    <div class="camera-section">
+        <video id="video" autoplay playsinline></video>
+        <div class="overlay"></div>
+    </div>
+
+    <div class="controls">
+        <button onclick="startCamera()" class="secondary-btn">Start Camera</button>
+        <button onclick="captureFrame()" class="primary-btn">Verify Liveness</button>
+    </div>
+
+    <div class="result-card">
+        <h3>Status</h3>
+        <div id="resultText" class="status waiting">Waiting for verification...</div>
+        <div class="confidence-bar">
+            <div id="confidenceFill"></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+<script src="js/camera.js"></script>
+<script src="js/liveness.js"></script>
+</body>
+</html>
